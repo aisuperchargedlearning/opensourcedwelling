@@ -11,7 +11,6 @@ import { EnergySystems } from './components/EnergySystems';
 import { EnvironmentalControl } from './components/EnvironmentalControl';
 import { Construction } from './components/Construction';
 import { CommunityResilience } from './components/CommunityResilience';
-import { MissionContact } from './components/MissionContact';
 import { Footer } from './components/Footer';
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
         <EnvironmentalControl />
         <Construction />
         <CommunityResilience />
-        <MissionContact />
       </main>
       <Footer />
     </div>

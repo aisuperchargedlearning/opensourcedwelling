@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 
 export function Contact() {
   return (
@@ -18,23 +18,7 @@ export function Contact() {
               <Mail className="text-[#E5D3C8] mt-1" size={24} />
               <div>
                 <h3 className="text-white text-lg mb-1">Email</h3>
-                <p className="text-gray-400">contact@yourbrand.com</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <Phone className="text-[#E5D3C8] mt-1" size={24} />
-              <div>
-                <h3 className="text-white text-lg mb-1">Phone</h3>
-                <p className="text-gray-400">+1 (555) 123-4567</p>
-              </div>
-            </div>
-
-            <div className="flex items-start space-x-4">
-              <MapPin className="text-[#E5D3C8] mt-1" size={24} />
-              <div>
-                <h3 className="text-white text-lg mb-1">Location</h3>
-                <p className="text-gray-400">123 Business Street<br />City, State 12345</p>
+                <p className="text-gray-400">resilientdwelling@gmail.com</p>
               </div>
             </div>
           </div>
