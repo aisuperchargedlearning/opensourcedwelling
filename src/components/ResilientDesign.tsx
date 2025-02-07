@@ -20,24 +20,30 @@ export function ResilientDesign() {
           title: 'Fire-Resistant Roofing',
           description: 'Choosing roofing materials with high fire resistance, such as metal or clay tiles, can prevent roof ignition from airborne embers. Simpler roof designs also minimize areas where embers can accumulate.',
           source: {
-            name: 'AP NEWS',
-            url: 'https://apnews.com/article/fires-lifestyle-environment-and-nature-california-climate-change-2890c52fd26ed668ebf5c3ae7448ff91'
+            name: 'THIS OLD HOUSE',
+            url: 'https://www.thisoldhouse.com/roofing/21018219/fire-resistant-roofing-and-siding'
           }
         },
         {
           title: 'Protected Openings',
           description: 'Installing double-pane tempered glass windows and incorporating fire shutters can offer better protection against heat and flames. Ensuring that vents are designed to resist ember entry is also crucial.',
-          source: {
-            name: 'AP NEWS',
-            url: 'https://apnews.com/article/fires-lifestyle-environment-and-nature-california-climate-change-2890c52fd26ed668ebf5c3ae7448ff91'
-          }
+          source: [
+            {
+              name: 'VULCAN VENTS',
+              url: 'https://www.vulcanvents.com/how-do-ember-resistant-vents-work/'
+            },
+            {
+              name: 'SMART WINDOW COMPANY',
+              url: 'https://smartwindowcompany.com/fire-preventative-windows-the-benefits-of-tempered-glass/'
+            }
+          ]
         },
         {
           title: 'Intumescent Coatings',
           description: 'Applying fire-resistant coatings to structural elements can enhance their ability to withstand high temperatures, providing additional time for evacuation and firefighting efforts.',
           source: {
             name: 'FIREFREE',
-            url: 'https://firefree.com/about-firefree/fire-resistant-coatings/'
+            url: 'https://www.firefree.com/fire-retardant-fire-resistant-paint-products/ff88-intumescent-coating.php'
           }
         }
       ]
@@ -59,8 +65,8 @@ export function ResilientDesign() {
           title: 'Zoning',
           description: 'Implementing zones around structures, such as a minimum of 30 feet for firefighters to protect a structure from wildfire, with increased distances on slopes.',
           source: {
-            name: 'FOREST SERVICE',
-            url: 'https://www.fs.usda.gov/managing-land/fire/firewise'
+            name: 'FIRE SAFE MARIN',
+            url: 'https://firesafemarin.org/create-a-fire-smart-yard/'
           }
         },
         {
@@ -137,15 +143,32 @@ export function ResilientDesign() {
                     <h4 className="text-[#E5D3C8] text-lg mb-2">{detail.title}</h4>
                     <p className="text-gray-400 mb-2">{detail.description}</p>
                     {detail.source && (
-                      <a
-                        href={detail.source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#E5D3C8] hover:text-white text-sm"
-                      >
-                        Source: {detail.source.name}
-                        <Link size={14} className="ml-1" />
-                      </a>
+                      Array.isArray(detail.source) ? (
+                        <div className="space-y-2">
+                          {detail.source.map((src, idx) => (
+                            <a
+                              key={idx}
+                              href={src.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-[#E5D3C8] hover:text-white text-sm block"
+                            >
+                              Source: {src.name}
+                              <Link size={14} className="ml-1" />
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <a
+                          href={detail.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-[#E5D3C8] hover:text-white text-sm"
+                        >
+                          Source: {detail.source.name}
+                          <Link size={14} className="ml-1" />
+                        </a>
+                      )
                     )}
                   </div>
                 ))}

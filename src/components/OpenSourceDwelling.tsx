@@ -30,9 +30,20 @@ export function OpenSourceDwelling() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="heading-lg text-[#E5D3C8] mb-4">Open Source Dwelling</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Embracing open-source principles in housing design fosters innovation and accessibility. By sharing blueprints, materials lists, and best practices, communities can collaboratively develop fire-resistant dwellings that are both cost-effective and tailored to local needs.
+          <p className="text-[#E5D3C8] max-w-2xl mx-auto whitespace-pre-line">
+            To the Los Angeles Community and others facing the daunting task of rebuilding your home and your life,
+
+            Our work here is to assist you with building back stronger and smarter. We are proposing tech that will allow you to get the insurance coverage you need. This platform is evolving. 
+            Our goal is to provide the technical resources and expert guidance you need to implement resilient design principles that will protect your home against future challenges.
+            We've created this space as both a resource hub and a collaborative community. Here, homeowners, designers, and builders can share their expertise and find practical solutions for resilient reconstruction. Together, we can transform this moment of rebuilding into one of innovation and lasting change.
+            With determination,
+            Eric Thompson
+            Founder
+            OpenSourceDwelling.com
           </p>
+          
+          <p className="text-[#E5D3C8] mt-8 font-medium">Contact for specific questions or contributions:</p>
+          <p className="text-[#E5D3C8] text-xl mt-2">resilientdwelling@gmail.com</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">

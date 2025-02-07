@@ -20,16 +20,16 @@ export function FireResistance() {
           title: 'Fire-Resistant Roofing',
           description: 'Selecting materials such as metal or clay tiles for roofing provides superior fire resistance. Simpler roof designs minimize areas where embers can accumulate, reducing ignition risks.',
           source: {
-            name: 'NFPA',
-            url: 'https://www.nfpa.org/Public-Education/Fire-causes-and-risks/Wildfire/Firewise-USA/Firewise-USA-Resources/Research-Fact-Sheet-Series'
+            name: 'THIS OLD HOUSE',
+            url: 'https://www.thisoldhouse.com/roofing/21018219/fire-resistant-roofing-and-siding'
           }
         },
         {
           title: 'Sturdy Siding',
           description: 'Employing non-combustible siding materials, including fiber-cement panels, stucco, masonry, and metal, enhances the building envelope\'s fire resistance.',
           source: {
-            name: 'FEMA',
-            url: 'https://www.fema.gov/sites/default/files/2020-11/fema_p-737_home-builders-guide_2008.pdf'
+            name: 'James Hardie',
+            url: 'https://www.jameshardie.com/why-james-hardie/siding-performance-durability/'
           }
         }
       ]
@@ -60,7 +60,7 @@ export function FireResistance() {
           description: 'Composed of cement reinforced with cellulose fibers, these boards are non-combustible and offer excellent fire resistance, making them suitable for siding and roofing.',
           source: {
             name: 'James Hardie',
-            url: 'https://www.jameshardie.com/why-hardie/fire-resistance'
+            url: 'https://www.jameshardie.com/why-james-hardie/siding-performance-durability/'
           }
         }
       ]
@@ -74,8 +74,8 @@ export function FireResistance() {
           title: 'Ember-Resistant Vents',
           description: 'Installing vents designed to resist ember entry prevents embers from infiltrating attics and crawl spaces.',
           source: {
-            name: 'Cal Fire',
-            url: 'https://www.readyforwildfire.org/prepare-for-wildfire/get-ready/hardening-your-home/'
+            name: 'Vulcan Vents',
+            url: 'https://www.vulcanvents.com/how-do-ember-resistant-vents-work/'
           }
         },
         {
@@ -157,15 +157,32 @@ export function FireResistance() {
                     <h4 className="text-[#E5D3C8] text-lg mb-2">{detail.title}</h4>
                     <p className="text-gray-400 mb-2">{detail.description}</p>
                     {detail.source && (
-                      <a
-                        href={detail.source.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-[#E5D3C8] hover:text-white text-sm"
-                      >
-                        Source: {detail.source.name}
-                        <Link size={14} className="ml-1" />
-                      </a>
+                      Array.isArray(detail.source) ? (
+                        <div className="space-y-2">
+                          {detail.source.map((src, idx) => (
+                            <a
+                              key={idx}
+                              href={src.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center text-[#E5D3C8] hover:text-white text-sm block"
+                            >
+                              Source: {src.name}
+                              <Link size={14} className="ml-1" />
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <a
+                          href={detail.source.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center text-[#E5D3C8] hover:text-white text-sm"
+                        >
+                          Source: {detail.source.name}
+                          <Link size={14} className="ml-1" />
+                        </a>
+                      )
                     )}
                   </div>
                 ))}
